@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple registration form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template: 150px / auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <% for (var i=0;i<data.length; i++){ %>
+            <div class="item" id="ahah">
+
+                <%= data[i].book_name %>
+
+            </div>
+            <br>
+            <div class="main-block">
+                <form method="post" id="<%= i %>">
+                    <label id="icon" for="name"></label>
+                    <input type="text" name="book" id="name" placeholder="Genre Add" required />
+
+
+                    <div class="btn-block">
+                        <button type="button" onclick="{
+                            var id='<%= data[i]._id %>';
+                            const formData = getElementById('<%= i %>');
+                             var genre=formData.elements[0].value;
+                             fetch('/add_genre', {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    id: id,
+                                    genre:genre
+                                }),
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                }
+                            })
+                            alert('<%= data[i].book_name %>'+' added to '+ genre);
+                        }">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <% } %>
+    </div>
+
+</body>
+
+</html>
