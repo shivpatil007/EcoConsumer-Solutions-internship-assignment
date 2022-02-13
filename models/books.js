@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
-
+const ObjectId= Schema.ObjectId;
 const bookSchema=new Schema({
     book_name:{
         type:String,
@@ -13,7 +13,8 @@ const bookSchema=new Schema({
     book_author:{
         type:String,
         required:true
-    }
+    },
+    gernra:[ObjectId]
 
 },{timestamps:true});
 

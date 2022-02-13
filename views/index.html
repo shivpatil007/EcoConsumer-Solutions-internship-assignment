@@ -165,20 +165,28 @@
         <h1>Add Book to Books collection</h1>
         <form action="/" method="post">
             <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-            <input type="text" name="email" id="name" placeholder="Book name" required />
+            <input type="text" name="name" id="name" placeholder="Book name" required />
             <label id="icon" for="name"><i class="fas fa-user"></i></label>
-            <input type="text" name="name" id="desc" placeholder="Book desc" required />
+            <input type="text" name="author" id="desc" placeholder="Book desc" required />
             <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-            <input type="text" name="age" id="author" placeholder="Book author" required />
+            <input type="text" name="desc" id="author" placeholder="Book author" required />
+            <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+            <input type="text" name="age" id="gernra" placeholder="Book gernra" required />
+
 
             <div class="btn-block">
                 <button type="submit">Submit</button>
             </div>
-            <h3 style="align-items: center;"> ------or------</h3>
-            <div class="btn-block">
-                <button type="button" onclick="location.href='/book'">Search Book</button>
-            </div>
         </form>
+        <h3 style="align-items: center;"> ------or------</h3>
+        <div class="btn-block">
+            <button type="button" onclick="location.href='/book'">Search Book</button>
+        </div>
+        <h3 style="align-items: center;"> ------or------</h3>
+        <div class="btn-block">
+            <button type="button" onclick="location.href='/get_gener'">Search all types of genre</button>
+        </div>
+
     </div>
 
 </body>
