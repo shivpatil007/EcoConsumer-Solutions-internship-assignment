@@ -5,7 +5,7 @@ const Book=require('./models/books');
 const Genre=require('./models/genres');
 const bodyparser=require('body-parser');
 const app=express();
-const dbURI='mongodb+srv://abcd:abcd@cluster0.cvbxr.mongodb.net/bookdb?retryWrites=true&w=majority';
+const dbURI='';
 
 // db and port connection
 mongoose.connect(dbURI,{useNewUrlParser:true})
