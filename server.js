@@ -85,7 +85,7 @@ app.get('/all_books_genre',(req,res)=>{
     Book.find()
     .then(result=>{
         console.log(result);
-        res.render('all_books_genre',{data:result});
+        res.send({data:result});
     })
     .catch(err=>console.log(err));
 });
